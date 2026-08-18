@@ -1,6 +1,14 @@
 import pg from "pg";
+
+const url = process.env.DATABASE_URL;
+if (!url) {
+  console.error("DATABASE_URL is not set. Create a .env file with DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/DBNAME");
+  process.exit(1);
+}
+
 const { Pool } = pg;
-const pool = new Pool({ connectionString: process.env.DATABASE_URL || "postgres://based:based@localhost:5432/basedcrm" });
+const pool = new Pool({ connectionString: url });
+
 const schema = `
 CREATE TABLE IF NOT EXISTS users (
   id BIGSERIAL PRIMARY KEY,
@@ -54,10 +62,15 @@ CREATE TABLE IF NOT EXISTS activities (
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 `;
+
 async function main() {
   await pool.query(schema);
   const { rows } = await pool.query("SELECT count(*)::int AS n FROM users");
-  if (rows[0].n > 0) { console.log("Schema ready; users exist, skipping seed."); await pool.end(); return; }
+  if (rows[0].n > 0) {
+    console.log("Schema ready; users exist, skipping seed.");
+    await pool.end();
+    return;
+  }
   const bcrypt = (await import("bcryptjs")).default;
   const hash = await bcrypt.hash("based123", 10);
   const client = await pool.connect();

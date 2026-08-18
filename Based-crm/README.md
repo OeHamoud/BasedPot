@@ -5,7 +5,7 @@ A simple, self-contained CRM with a dead-simple login, built with the stack you 
 - **Next.js 16.0.6** (App Router, React Server Components)
 - **React 19.2.0**
 - **TypeScript** + **Tailwind CSS v4**
-- **PostgreSQL 16** (via Docker)
+- **PostgreSQL** (bring your own — local install, Supabase, Neon, RDS, etc.)
 - Auth: plain `POST /api/auth/login` → signed httpOnly session cookie (JWT, HS256 via `jose`), passwords hashed with `bcryptjs`
 
 ## Features
@@ -20,11 +20,15 @@ A simple, self-contained CRM with a dead-simple login, built with the stack you 
 
 ## Quick start
 
-### 1. Start Postgres (Docker)
+### 1. Point it at your Postgres
 
-```bash
-docker compose up -d
+Copy `.env` to `.env.local` (or edit `.env`) and set your connection string:
+
 ```
+DATABASE_URL=postgres://USER:PASSWORD@HOST:5432/DBNAME
+```
+
+This works with any Postgres — local install, Docker you run yourself, or a hosted one (Supabase, Neon, Railway, RDS…).
 
 ### 2. Install and init the database
 
@@ -49,12 +53,10 @@ npm run dev
 
 ## Configuration
 
-Everything lives in `.env` / `.env.local`:
-
-| Variable       | Default                                          |
-| -------------- | ------------------------------------------------ |
-| `DATABASE_URL` | `postgres://based:based@localhost:5432/basedcrm` |
-| `AUTH_SECRET`  | dev fallback — **set a real secret in production** |
+| Variable       | Description                                    |
+| -------------- | ---------------------------------------------- |
+| `DATABASE_URL` | Your Postgres connection string (required)     |
+| `AUTH_SECRET`  | Secret signing session cookies — **set a real one in production** |
 
 ## The login API
 
@@ -102,11 +104,10 @@ src/
   lib/              db pool, auth (session cookie), types, api helpers
 scripts/
   init-db.mjs       schema + seed (idempotent)
-docker-compose.yml  Postgres 16
 ```
 
 ## Production notes
 
 - `npm run build && npm start`
-- Set a strong `AUTH_SECRET` and a real `DATABASE_URL`.
+- Set a strong `AUTH_SECRET` and your real `DATABASE_URL`.
 - Passwords are bcrypt-hashed; sessions are signed JWTs in httpOnly cookies.
