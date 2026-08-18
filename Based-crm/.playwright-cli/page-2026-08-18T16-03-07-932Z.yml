@@ -1,0 +1,52 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - complementary [ref=f1e3]:
+      - link "B Based CRM sales workspace" [ref=f1e4] [cursor=pointer]:
+        - /url: /dashboard
+        - generic [ref=f1e5]: B
+        - generic [ref=f1e6]:
+          - paragraph [ref=f1e7]: Based CRM
+          - paragraph [ref=f1e8]: sales workspace
+      - navigation [ref=f1e10]:
+        - link "◧ Dashboard" [ref=f1e11] [cursor=pointer]:
+          - /url: /dashboard
+          - generic [ref=f1e12]: ◧
+          - text: Dashboard
+        - link "👥 Contacts" [ref=f1e13] [cursor=pointer]:
+          - /url: /contacts
+          - generic [ref=f1e14]: 👥
+          - text: Contacts
+        - link "🏢 Companies" [ref=f1e15] [cursor=pointer]:
+          - /url: /companies
+          - generic [ref=f1e16]: 🏢
+          - text: Companies
+        - link "💼 Deals" [ref=f1e17] [cursor=pointer]:
+          - /url: /deals
+          - generic [ref=f1e18]: 💼
+          - text: Deals
+        - button "⎋ Sign out" [ref=f1e20]:
+          - generic [ref=f1e21]: ⎋
+          - text: Sign out
+      - generic [ref=f1e22]:
+        - generic [ref=f1e23]: AB
+        - generic [ref=f1e24]:
+          - paragraph [ref=f1e25]: Ava Bennett
+          - paragraph [ref=f1e26]: admin@basedcrm.com
+    - main [ref=f1e27]:
+      - generic [ref=f1e29]:
+        - generic [ref=f1e30]:
+          - generic [ref=f1e31]:
+            - heading "Contacts" [level=1] [ref=f1e32]
+            - paragraph [ref=f1e33]: 0 people in your address book
+          - button "+ Add contact" [ref=f1e34]
+        - generic [ref=f1e35]:
+          - textbox "Search contacts…" [ref=f1e36]
+          - combobox [ref=f1e37]:
+            - option "All statuses" [selected]
+            - option "Lead"
+            - option "Prospect"
+            - option "Customer"
+            - option "Churned"
+        - generic [ref=f1e38]: Loading contacts…
+  - button "Open Next.js Dev Tools" [ref=f1e44] [cursor=pointer]
+  - alert [ref=f1e48]

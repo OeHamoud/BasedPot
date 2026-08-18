@@ -1,0 +1,18 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]: B
+    - heading "Based CRM" [level=1] [ref=e6]
+    - paragraph [ref=e7]: Your deals, contacts, and pipeline — in one place.
+  - generic [ref=e8]:
+    - heading "Sign in" [level=2] [ref=e9]
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]: Email
+        - textbox "Email" [ref=e13]:
+          - /placeholder: you@company.com
+      - generic [ref=e14]:
+        - generic [ref=e15]: Password
+        - textbox "Password" [ref=e16]:
+          - /placeholder: ••••••••
+      - button "Sign in" [ref=e17]
+  - paragraph [ref=e18]: Demo login — admin@basedcrm.com / based123

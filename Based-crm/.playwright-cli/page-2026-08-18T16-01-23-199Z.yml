@@ -1,0 +1,45 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - complementary [ref=f2e3]:
+      - link "B Based CRM sales workspace" [ref=f2e4] [cursor=pointer]:
+        - /url: /dashboard
+        - generic [ref=f2e5]: B
+        - generic [ref=f2e6]:
+          - paragraph [ref=f2e7]: Based CRM
+          - paragraph [ref=f2e8]: sales workspace
+      - navigation [ref=f2e10]:
+        - link "◧ Dashboard" [ref=f2e11] [cursor=pointer]:
+          - /url: /dashboard
+          - generic [ref=f2e12]: ◧
+          - text: Dashboard
+        - link "👥 Contacts" [ref=f2e13] [cursor=pointer]:
+          - /url: /contacts
+          - generic [ref=f2e14]: 👥
+          - text: Contacts
+        - link "🏢 Companies" [ref=f2e15] [cursor=pointer]:
+          - /url: /companies
+          - generic [ref=f2e16]: 🏢
+          - text: Companies
+        - link "💼 Deals" [ref=f2e17] [cursor=pointer]:
+          - /url: /deals
+          - generic [ref=f2e18]: 💼
+          - text: Deals
+        - button "⎋ Sign out" [ref=f2e20]:
+          - generic [ref=f2e21]: ⎋
+          - text: Sign out
+      - generic [ref=f2e22]:
+        - generic [ref=f2e23]: AB
+        - generic [ref=f2e24]:
+          - paragraph [ref=f2e25]: Ava Bennett
+          - paragraph [ref=f2e26]: admin@basedcrm.com
+    - main [ref=f2e27]:
+      - generic [ref=f2e29]:
+        - generic [ref=f2e30]:
+          - generic [ref=f2e31]:
+            - heading "Companies" [level=1] [ref=f2e32]
+            - paragraph [ref=f2e33]: 0 accounts
+          - button "+ Add company" [ref=f2e34]
+        - textbox "Search companies…" [ref=f2e36]
+        - generic [ref=f2e37]: Loading companies…
+  - button "Open Next.js Dev Tools" [ref=f2e43] [cursor=pointer]
+  - alert [ref=f2e47]
