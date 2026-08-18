@@ -1,0 +1,16 @@
+services:
+  based-crm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: based-crm
+    ports:
+      - "22:22"
+      - "3000:3000"
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
